@@ -1,0 +1,56 @@
+{
+  "api_key": {
+    "type": "string",
+    "description": "DashScope API Key",
+    "hint": "从阿里云百炼平台获取。留空则使用环境变量 DASHSCOPE_API_KEY。",
+    "default": ""
+  },
+  "model": {
+    "type": "string",
+    "description": "模型名称",
+    "hint": "可选: qwen-image-2.0, qwen-image-2.0-pro, qwen-image-plus 等",
+    "options": [
+      "qwen-image-2.0",
+      "qwen-image-2.0-pro",
+      "qwen-image-plus",
+      "qwen-image-plus-2026-01-09"
+    ],
+    "default": "qwen-image-2.0"
+  },
+  "size": {
+    "type": "string",
+    "description": "默认图片尺寸",
+    "hint": "图片输出尺寸，宽*高格式",
+    "options": [
+      "1024*1024",
+      "768*1024",
+      "1024*768",
+      "1152*896",
+      "896*1152",
+      "1344*768",
+      "768*1344",
+      "1440*720",
+      "720*1440",
+      "1328*1328"
+    ],
+    "default": "1024*1024"
+  },
+  "negative_prompt": {
+    "type": "string",
+    "description": "负面提示词",
+    "hint": "不希望出现在图片中的内容，用逗号分隔。留空不使用。",
+    "default": ""
+  },
+  "timeout": {
+    "type": "int",
+    "description": "超时时间（秒）",
+    "hint": "API 请求和图片下载的超时时间，建议 60-300",
+    "default": 120
+  },
+  "max_concurrency": {
+    "type": "int",
+    "description": "最大并发数",
+    "hint": "单个用户同时进行中的图片生成任务数上限",
+    "default": 2
+  }
+}
